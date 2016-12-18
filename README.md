@@ -32,7 +32,11 @@ __Test each part as you successfully attach them so you know they work!!__
 
 3. To assemble the Neopixel, you'll need **3 wires**, **1000µF capacitor** and **430 Ohm resistor**. Solder the wires from the back of the Neopixels (because space is limited between pixels in the front) relative to the markings in the front, G(Ground) and V+(5V). 
 
+<<<<<<< HEAD
 4. For IN (Data In), solder the 430 Ohm resistor to it, and the wire to the other end of the resistor. Use nail polish to coat where you connected the resistor and wire which acts as an insulator. 
+=======
+4. For IN(Data In), solder the 430 Ohm resistor to it, and the wire to the other end of the resistor. Use nail polish to coat where you connected the resistor and wire which acts as an insulator. 
+>>>>>>> 28206f0c08ab372d95ccd82b6b42605c0ccd1288
 
 5. Solder the 1000µF capacitor from an available G(ground) to V+(5V). Your Neopixel should look something like this: 
 <img src="https://github.com/jurddle/Mood-Lamp/blob/master/images/neopixel.jpg" alt="neopixel" width="170" height="170">
