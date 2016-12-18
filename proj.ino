@@ -23,9 +23,9 @@ float
   reading, // reading for temperature sensor
   temperature;
 int frequency; 
-char* menu[] = { "Red             ", "Blue            ", "Green           ", "Yellow          ",
-                 "Orange          ", "Purple          ", "White           ", "Temperature     ",
-                 "Party           ", "Rainbow         " };
+char* menu[] = { "Power/Passion   ", "Calm/Sad        ", "Peaceful        ", "Happy/Energetic ",
+                 "Warm            ", "Mysterious      ", "Romantic        ", "Temperature     ",
+                 "IT'S PARTY TIME!", "Rainbow Road    " };
 
 void setup(){
   // Debugging start output
@@ -42,8 +42,7 @@ void setup(){
 }
 
 void loop(){
-  //menuDisplay();
-   uint8_t button = lcd.readButtons();
+  uint8_t button = lcd.readButtons();
   lcd.setCursor(0,1);
   lcd.print(menu[i]);
   switch(button){
@@ -74,39 +73,39 @@ void loop(){
     case BUTTON_SELECT: // 1
       // Red
       if(i == 0){
-        for(uint16_t i = 0; i < NUMPIXELS; ++i){
-          pixels.setPixelColor(i, pixels.Color(125,0,0)); 
+        for(uint32_t i = 0; i < NUMPIXELS; ++i){
+          pixels.setPixelColor(i, pixels.Color(255,0,0)); 
           pixels.show();
         }
       }
       
       // Blue
       if(i == 1){
-        for(uint16_t i = 0; i < NUMPIXELS; ++i){
-          pixels.setPixelColor(i, pixels.Color(0,0,125)); 
+        for(uint32_t i = 0; i < NUMPIXELS; ++i){
+          pixels.setPixelColor(i, pixels.Color(0,0,255)); 
           pixels.show();
         }
       }
       
       // Green
       if(i == 2){
-        for(uint16_t i = 0; i < NUMPIXELS; ++i){
-          pixels.setPixelColor(i, pixels.Color(0,125,0)); 
+        for(uint32_t i = 0; i < NUMPIXELS; ++i){
+          pixels.setPixelColor(i, pixels.Color(0,255,0)); 
           pixels.show();
         }
       }
       
       // Yellow
       if(i == 3){
-        for(uint16_t i = 0; i < NUMPIXELS; ++i){
-          pixels.setPixelColor(i, pixels.Color(125,100,0)); 
+        for(uint32_t i = 0; i < NUMPIXELS; ++i){
+          pixels.setPixelColor(i, pixels.Color(255,150,0)); 
           pixels.show();
         }
       }
       
       // Orange
       if(i == 4){
-        for(uint16_t i = 0; i < NUMPIXELS; ++i){
+        for(uint32_t i = 0; i < NUMPIXELS; ++i){
           pixels.setPixelColor(i, pixels.Color(125,20,0)); 
           pixels.show();
         }
@@ -114,16 +113,16 @@ void loop(){
       
       // Purple
       if(i == 5){
-        for(uint16_t i = 0; i < NUMPIXELS; ++i){
-          pixels.setPixelColor(i, pixels.Color(125,0,125)); 
+        for(uint32_t i = 0; i < NUMPIXELS; ++i){
+          pixels.setPixelColor(i, pixels.Color(100,0,200)); 
           pixels.show();
         }
       }
       
-      // White
+      // Pink
       if(i == 6){
-        for(uint16_t i = 0; i < NUMPIXELS; ++i){
-          pixels.setPixelColor(i, pixels.Color(100,100,100)); 
+        for(uint32_t i = 0; i < NUMPIXELS; ++i){
+          pixels.setPixelColor(i, pixels.Color(255,30,30)); 
           pixels.show();
         }
       }
@@ -170,7 +169,7 @@ void loop(){
           frequency = analogRead(mic_pin); // Raw reading from mic 
           float voltage = frequency * (5.0 / 1023.0);
           Serial.println(voltage);
-          if(voltage > 1.74){
+          if(voltage > 1.73){
             for(uint16_t i = 0; i < NUMPIXELS; ++i){
               pixels.setPixelColor(i,0,0,0);
               pixels.show();
@@ -183,6 +182,7 @@ void loop(){
               pixels.setPixelColor(i, color);
               pixels.show();
             }
+            delay(20);
           }
         }
       }
