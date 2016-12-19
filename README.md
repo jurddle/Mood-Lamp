@@ -13,7 +13,7 @@ Brighten up your room with your own Arduino Mood Lamp! :smile:
 * Temperature Sensor
 * 1000µF capacitor (can use 6.3V or higher capacitor)
 * 430 Ohm (can use 300-500 Ohm resistor)
-* 5V DC Battery
+* 5V DC Battery, using Arduino's USB cable
 * 9 jumper wires
 * Soldering kit
 * One-sided copper-clad Perfboard (can use two sided perfboard) 
